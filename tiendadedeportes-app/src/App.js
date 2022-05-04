@@ -1,7 +1,10 @@
-import logo from './logo.svg';
 import './App.css';
 import styled from 'styled-components';
 import NavBar from './components/navbar';
+import ItemContainer from './components/itemListContainer';
+//import Class from './components/Class';
+//import Function from './components/function';
+//import List from './components/lists';
 
 function App() {
   const Title = styled.h1`
@@ -16,6 +19,10 @@ function App() {
   return (
     <div className="App">
       <NavBar></NavBar>
+      <ItemContainer></ItemContainer>
+      {/* <Class  name="TEST"></Class>
+      <Function></Function>
+      <List></List> */}
     </div>
   );
 }

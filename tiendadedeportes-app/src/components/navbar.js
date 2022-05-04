@@ -1,6 +1,7 @@
 import React from 'react';
 import {NavLink as Link} from 'react-router-dom';
 import styled from 'styled-components';
+import CartWidget from './cartWidget';
 function NavBar(){
     const Nav = styled.nav`
         height: 80;
@@ -8,6 +9,7 @@ function NavBar(){
         justify-content: space-evenly;
         padding: 0.5rem;
     `;
+
     const Title = styled.h1`
     font-size: 1.5em;
     text-align: center;
@@ -26,6 +28,7 @@ function NavBar(){
             <Title>Nosotros</Title>
             <Title>Ofertas</Title>
             <Title>FAQ</Title>
+            <CartWidget />
         </Nav>
     )
 }
