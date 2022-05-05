@@ -1,9 +1,13 @@
 import React from "react";
-function ItemContainer() {
+import imgFondo from '../img/background.jpg'
+function Greeting (props) {
     return(
-        <div>
-            <h1>Hola Mundo</h1>
+        <div 
+        style={{
+            backgroundImage:`url(${imgFondo})` 
+        }}>
+            <h1>Hola {props.name}</h1>
         </div>
     )
 }
-export default ItemContainer
+export default Greeting 
