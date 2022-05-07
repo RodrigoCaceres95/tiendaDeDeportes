@@ -20,7 +20,7 @@ function App() {
   return (
     <div className="App">
       <NavBar></NavBar>
-      <Greeting name="Mundo"></Greeting>
+      <Greeting name="cantidad"></Greeting>
       {/* <Class  name="TEST"></Class>
       <Function></Function>
       <List></List> */}
