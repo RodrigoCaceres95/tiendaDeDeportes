@@ -1,13 +1,15 @@
 import React from "react";
-
-const Item = ({item}) =>{
-   const { name, precio, marca, image } = item;
+import ItemCount from "./itemcount";
+const Item = (item) =>{
+    console.log(item)
+   const { name, precio, marca, img, stock } = item;
    return(
     <div>
-        <img src={image} alt={name}/>
-        <h4>{name}</h4>
-        <h6>Marca: {marca}</h6>
+        <img src={img} alt={name} width="300px"/>
+        <h3>{name}</h3>
+        <h4>Marca: {marca}</h4>
         <p>{precio}</p>
+        <ItemCount stock={stock} />
     </div>
    )
 }

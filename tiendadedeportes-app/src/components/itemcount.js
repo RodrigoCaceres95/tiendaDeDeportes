@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
- function ItemCount({initial, stock}){
+ function ItemCount({stock}){
+    const initial = 1
     const [onAdd, setCount] = useState(initial)
     return(
         <div>

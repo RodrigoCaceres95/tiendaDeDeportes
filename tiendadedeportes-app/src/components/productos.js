@@ -1,21 +1,26 @@
-//import img1 from '../img'
+import img1 from '../img/remera_boca.jpg'
+import img2 from '../img/remera_river.jpg'
+import img3 from '../img/remera_cai.jpeg'
 export const prod = [
     {   id: 1,
         name: "Remera Boca Juniors Home Kit",
-        precio: 17000,
+        precio: "$17000",
         marca: "Adidas",
-        image: "https://www.opensports.com.ar/media/catalog/product/cache/4769e4d9f3516e60f2b4303f8e5014a8/G/U/GU1883_0.jpg"
+        img: img1,
+        stock: 26
     },
     {   id: 2,
         name: "Remera River Plate Home Kit",
-        precio: 17000,
+        precio: "$17000",
         marca: "Adidas",
-        image: "https://www.opensports.com.ar/media/catalog/product/cache/4769e4d9f3516e60f2b4303f8e5014a8/G/U/GU9601_0.jpg"
+        img: img2,
+        stock: 6
      },
      {  id: 3,
         name: "Remera Independiente Home Kit",
-        precio: 17000,
+        precio: "$17000",
         marca: "Puma",
-        image: "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_480,h_480/global/758842/06/fnd/ARG/fmt/png"
+        img: img3,
+        stock: 11
      },
 ]

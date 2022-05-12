@@ -1,23 +1,22 @@
 import React from "react";
 import {useEffect, useState} from "react"
-import imgFondo from '../img/background.jpg';
-import {prod} from "./productos";
+import { prod } from "./productos";
 import ItemList from "./itemList";
+function getProducts() {
+    const data = new Promise((resolve)=> {
+        resolve(prod);
+    });
+    return data;
+}
 function ItemListContainer () {
     const [items, setItems] = useState([]);
     useEffect(()=>{
-        setTimeout(() => {
-        const data = new Promise((resolve, reject)=> {
-        resolve(prod)
-    });
-    data.then((data) =>{
-        setItems(data)
-    })
-    data.catch((err) =>{
-        console.log(err)
-    })
+        getProducts()    
+            .then((res) =>{
+            setItems(res)
+        })
+        .catch((error) =>{console.log("Error log", error)})
 }, [])
-    }, 2000);
     return(
         <>
             <ItemList items={items}/>
