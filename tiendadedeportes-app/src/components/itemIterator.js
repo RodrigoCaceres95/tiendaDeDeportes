@@ -12,8 +12,10 @@ function ItemIterator({ details }) {
                 descripcion={iterar.descripcion}
                 tipo_camiseta={iterar.tipo_camiseta} 
                 precio={iterar.precio}
+                marca={iterar.marca}
                 escudo={iterar.escudo}
-                stock={iterar.stock}/>
+                stock={iterar.stock}
+                articulo_color={iterar.articulo_color}/>
                 )
             })}
         </div>

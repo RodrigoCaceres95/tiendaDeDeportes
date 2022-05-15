@@ -1,0 +1,16 @@
+nav {
+    background-color: rgb(73, 181, 85);
+    color: white;
+    height: 70px;
+    display: flex;
+    font-size: 16px;
+    justify-content: space-between;
+    padding: 0.5rem;
+}
+nav a {
+    text-decoration: none;
+    color: black;
+}
+nav a:hover {
+    cursor: pointer;
+}
