@@ -1,8 +1,8 @@
 import React from "react";
 import {useEffect, useState} from "react"
 import { prod } from "./productos";
-import axios from 'axios'
 import ItemIterator from "./itemIterator"
+import {useParams} from "react-router-dom"
 function getDetail() {
     const data = new Promise((resolve)=> {
         setTimeout(() => {
@@ -13,14 +13,16 @@ function getDetail() {
 }
 function ItemDetailContainer () {
     const [details, setDetails] = useState([]);
+    let id = useParams()
+    let camisetaid = id.id
+    console.log(camisetaid)
     useEffect(()=>{
-        axios('./productos/1')
         getDetail()    
             .then((res) =>{
             setDetails(res)
         })
         .catch((error) =>{console.log("Error log", error)})
-}, [])
+}, [camisetaid])
     return(
         <>
             <ItemIterator details={details}/>

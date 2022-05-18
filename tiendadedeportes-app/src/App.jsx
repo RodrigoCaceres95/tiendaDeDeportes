@@ -12,10 +12,6 @@ function App() {
   text-align: center;
   color: palevioletred;
 `;
-
-  const styles = {
-    color: "red"
-  }
   return (
     <Router>
     <div className="App">
@@ -25,9 +21,6 @@ function App() {
         <Route path='/detail/:id' element={<ItemDetailContainer />}/>
       </Routes>
       {/* <ItemDetailContainer/> */}
-      {/* <Class  name="TEST"></Class>
-      <Function></Function>
-      <List></List> */}
     </div>
     </Router>
   );

@@ -2,7 +2,6 @@ import React from "react";
 import {useEffect, useState} from "react"
 import { prod } from "./productos";
 import ItemList from "./itemList";
-import {Link} from "react-router-dom"
 function getProducts() {
     const data = new Promise((resolve)=> {
         resolve(prod);
@@ -19,8 +18,8 @@ function ItemListContainer () {
         .catch((error) =>{console.log("Error log", error)})
 }, [])
     return(
-        <div className="fondo">
-            <Link className="Link" to={`/detail/${prod.id}`}><ItemList items={items}/></Link>
+        <div key={prod.id} className="fondo">
+        <ItemList items={items}/>
         </div>
     )
     }
