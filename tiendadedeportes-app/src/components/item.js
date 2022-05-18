@@ -1,16 +1,21 @@
 import React from "react";
-import ItemCount from "./itemcount";
+// import ItemCount from "./itemcount";
+import './itemListContainer.css'
 const Item = (item) =>{
     console.log(item)
-   const { name, precio, marca, img, stock } = item;
+   const { name, precio, marca, img } = item;
    return(
-    <div>
-        <img src={img} alt={name} width="300px"/>
-        <h3>{name}</h3>
-        <h4>Marca: {marca}</h4>
-        <p>{precio}</p>
-        <ItemCount stock={stock} />
-    </div>
+        <div className="contenedor">
+            <div className="card">
+            <div className="imagen">
+                <img width={300} src={img} alt={name}/>
+            </div>
+            <div className="info">
+                <h3>{name}</h3>
+                <h3>{precio}</h3>
+            </div>
+            </div>
+        </div>
    )
 }
 export default Item

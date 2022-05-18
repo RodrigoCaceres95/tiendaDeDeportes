@@ -18,9 +18,9 @@ function ItemListContainer () {
         .catch((error) =>{console.log("Error log", error)})
 }, [])
     return(
-        <>
+        <div className="fondo">
             <ItemList items={items}/>
-        </>
+        </div>
     )
     }
 export default ItemListContainer 

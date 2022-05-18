@@ -1,0 +1,12 @@
+.contenedor {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 350px;
+}
+.card {
+    padding: 10px;
+}
+h3 {
+    font-size: 18px;
+}
