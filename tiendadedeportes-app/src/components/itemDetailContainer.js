@@ -1,11 +1,12 @@
 import React from "react";
 import {useEffect, useState} from "react"
-import { detalleBoca } from "./detalle_CamisetaBoca";
+import { prod } from "./productos";
+import axios from 'axios'
 import ItemIterator from "./itemIterator"
 function getDetail() {
     const data = new Promise((resolve)=> {
         setTimeout(() => {
-            resolve(detalleBoca);
+            resolve(prod);
         }, 2000);
     });
     return data;
@@ -13,6 +14,7 @@ function getDetail() {
 function ItemDetailContainer () {
     const [details, setDetails] = useState([]);
     useEffect(()=>{
+        axios('./productos/1')
         getDetail()    
             .then((res) =>{
             setDetails(res)

@@ -2,6 +2,7 @@ import React from "react";
 import {useEffect, useState} from "react"
 import { prod } from "./productos";
 import ItemList from "./itemList";
+import {Link} from "react-router-dom"
 function getProducts() {
     const data = new Promise((resolve)=> {
         resolve(prod);
@@ -19,7 +20,7 @@ function ItemListContainer () {
 }, [])
     return(
         <div className="fondo">
-            <ItemList items={items}/>
+            <Link className="Link" to={`/detail/${prod.id}`}><ItemList items={items}/></Link>
         </div>
     )
     }

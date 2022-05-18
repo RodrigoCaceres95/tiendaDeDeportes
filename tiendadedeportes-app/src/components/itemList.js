@@ -4,7 +4,7 @@ import ItemCount from "./itemcount";
 function ItemList({ items }) {
     console.log(items)
     return(
-        <div>
+        <div style={{display: "flex"}}>
             {items.map((iterar) => {
                 return( 
                 <Item key={iterar.id} 
