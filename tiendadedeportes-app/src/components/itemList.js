@@ -9,14 +9,14 @@ function ItemList({ items }) {
         <div className="padre">
             {items.map((iterar) => {
                 return( 
-                <div key={prod.id}>
-                <Link to={`/detail/${iterar.id}`}>
-                <Item key={iterar.id} 
-                name={iterar.name} 
-                img={iterar.img} 
-                precio={iterar.precio}/>
-                </Link>
-                </div>
+                    <div key={items.id}>
+                    <Link to={`/detail/${iterar.id}`}>
+                        <Item key={iterar.id} 
+                        name={iterar.name} 
+                        img={iterar.img} 
+                        precio={iterar.precio}/>
+                    </Link>
+                    </div>
                 )
             })}
         </div>

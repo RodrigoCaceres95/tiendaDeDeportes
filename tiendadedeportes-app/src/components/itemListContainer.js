@@ -18,7 +18,7 @@ function ItemListContainer () {
         .catch((error) =>{console.log("Error log", error)})
 }, [])
     return(
-        <div key={prod.id} className="fondo">
+        <div key={items.id} className="fondo">
         <ItemList items={items}/>
         </div>
     )

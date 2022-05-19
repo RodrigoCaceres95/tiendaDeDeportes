@@ -6,7 +6,8 @@ function ItemIterator({ details }) {
         <div>
             {details.map((iterar) => {
                 return( 
-                <ItemDetail key={iterar.id} 
+                    <div key={iterar.id}>
+                <ItemDetail  
                 name={iterar.name} 
                 img={iterar.img} 
                 descripcion={iterar.descripcion}
@@ -16,6 +17,7 @@ function ItemIterator({ details }) {
                 escudo={iterar.escudo}
                 stock={iterar.stock}
                 articulo_color={iterar.articulo_color}/>
+                </div>
                 )
             })}
         </div>
