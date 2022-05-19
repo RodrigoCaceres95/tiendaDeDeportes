@@ -17,10 +17,10 @@ function App() {
     <div className="App">
       <NavBar/>
       <ItemListContainer/>
+      {/* <ItemDetailContainer/> */}
       <Routes>
         <Route path='/detail/:id' element={<ItemDetailContainer />}/>
       </Routes>
-      {/* <ItemDetailContainer/> */}
     </div>
     </Router>
   );

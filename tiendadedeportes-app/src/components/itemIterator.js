@@ -8,7 +8,7 @@ function ItemIterator({ details }) {
                 return( 
                 <ItemDetail key={iterar.id} 
                 name={iterar.name} 
-                src={iterar.src[0]} 
+                img={iterar.img} 
                 descripcion={iterar.descripcion}
                 tipo_camiseta={iterar.tipo_camiseta} 
                 precio={iterar.precio}

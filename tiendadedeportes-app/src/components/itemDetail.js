@@ -3,10 +3,10 @@ import ItemCount from "./itemcount";
 import './itemDetailContainer.css'
 const ItemDetail = (detail) =>{
     console.log(detail)
-    const { name, descripcion, tipo_camiseta, precio, escudo, marca, src, stock, articulo_color } = detail;
+    const { name, descripcion, tipo_camiseta, precio, escudo, marca, img, stock, articulo_color } = detail;
         return(
         <div className="contenedor">
-            <img className="img" src={src} alt={name}/>
+            <img className="img" src={img} alt={name}/>
             <div className="detalles">
                 <h3>{name}</h3>
                 <ul className="lista_detalles">

@@ -1,11 +1,12 @@
 import React from "react";
 import {prod} from './productos'
 import { Link } from "react-router-dom";
+import './itemListContainer.css'
 import Item from "./item"
 function ItemList({ items }) {
     console.log(items)
     return(
-        <div style={{display: "flex"}}>
+        <div className="padre">
             {items.map((iterar) => {
                 return( 
                 <div key={prod.id}>
@@ -13,8 +14,7 @@ function ItemList({ items }) {
                 <Item key={iterar.id} 
                 name={iterar.name} 
                 img={iterar.img} 
-                precio={iterar.precio}
-                stock={iterar.stock}/>
+                precio={iterar.precio}/>
                 </Link>
                 </div>
                 )
