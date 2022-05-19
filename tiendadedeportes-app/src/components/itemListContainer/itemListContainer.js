@@ -1,13 +1,7 @@
 import React from "react";
 import {useEffect, useState} from "react"
-import { prod } from "./productos";
 import ItemList from "./itemList";
-function getProducts() {
-    const data = new Promise((resolve)=> {
-        resolve(prod);
-    });
-    return data;
-}
+import { getProducts } from "../productos";
 function ItemListContainer () {
     const [items, setItems] = useState([]);
     useEffect(()=>{

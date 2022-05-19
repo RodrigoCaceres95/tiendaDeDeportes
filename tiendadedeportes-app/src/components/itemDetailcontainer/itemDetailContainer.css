@@ -1,27 +1,33 @@
 body {
     background-color: rgb(237, 237, 237);
 }
-.contenedor {
+.body {
     display: flex;
+    align-items: center;
+    justify-content: center;
     margin: 50px 100px 50px 100px;
     background-color: white;
     border-radius: 10px;
 }
 h3 {
     background-color: white;
-    padding: 0 100px;
+    padding-top: 100px;
     font-size: 30px;
-    text-align: center;
+    text-align: justify;
 }
-.img{
-    border-radius: 10px;
+.contenedor img {
+    max-width: 700px;
 }
-.detalles, .lista_detalles {
+.detalles {
     background-color: white;
-    padding: 30px;
-    margin: 10px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     border-radius: 40px;
     text-align: left;
     font-size: 18px;
+}
+.detalles .lista_detalles {
     list-style: circle;
 }

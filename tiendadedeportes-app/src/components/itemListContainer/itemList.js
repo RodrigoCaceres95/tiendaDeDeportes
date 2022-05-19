@@ -1,5 +1,4 @@
 import React from "react";
-import {prod} from './productos'
 import { Link } from "react-router-dom";
 import './itemListContainer.css'
 import Item from "./item"
