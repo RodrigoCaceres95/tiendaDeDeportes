@@ -1,15 +1,18 @@
 import React, { useState } from 'react';
 import './itemcount.css'
+import {Link} from 'react-router-dom'
 
- function ItemCount({stock}){
+ function ItemCount({stock, onAdd}){
     const initial = 1
-    const [onAdd, setCount] = useState(initial)
+    const [number, setCount] = useState(initial)
     return(
         <div className='contenedor'>
-            <h2>{onAdd}</h2>
-                <button className='boton' onClick={()=> {if(onAdd > initial){setCount(onAdd-1)}}}>(-)</button>
-                <button className='boton'>Agregar al carrito</button>
-                <button className='boton' onClick={()=>{if(onAdd < stock)setCount(onAdd+1)}}>(+)</button>
+            <h2>{number}</h2>
+                <button className='boton' onClick={()=> {if(number > initial){setCount(number-1)}}}>(-)</button>
+                <Link to={'/category/Cart'}>
+                <button className='boton'onClick={()=>onAdd(number)}>Agregar al carrito</button>
+                </Link>
+                <button className='boton' onClick={()=>{if(number < stock)setCount(number+1)}}>(+)</button>
         </div>
     )
 }

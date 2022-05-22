@@ -9,9 +9,6 @@ function ItemDetailContainer () {
     const [detail, setDetail] = useState({});
     const {id} = useParams()
     console.log(id.id)
-    // let id = useParams()
-    // let camisetaid = id.id
-    // console.log(camisetaid)
     useEffect(()=>{
         getDetail(id)    
             .then((res) =>{

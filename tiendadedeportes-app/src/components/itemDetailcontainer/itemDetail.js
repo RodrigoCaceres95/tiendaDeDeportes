@@ -2,6 +2,10 @@ import React from "react"
 import ItemCount from "../itemcount";
 import './itemDetailContainer.css'
 const ItemDetail = ({detail}) =>{
+    const onAdd = (number) => {
+        console.log(`Has añadido ${number} prendas de este producto a tu carrito`)
+        window.removeEventListener('onClick')
+    }
     console.log(detail)
     // const { name, descripcion, tipo_camiseta, precio, escudo, marca, img, stock, articulo_color } = detail;
         return(
@@ -17,7 +21,9 @@ const ItemDetail = ({detail}) =>{
                     <li>Color: {detail.articulo_color} </li>
                     <li>Descripción: {detail.descripcion}</li>
                 </ul>
-                <ItemCount stock={detail.stock} />
+                <ItemCount
+                onAdd={onAdd} 
+                stock={detail.stock} />
             </div>
         </div>
        )

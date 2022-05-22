@@ -15,8 +15,7 @@ function NavBar(){
   text-align: center;
 
   color: RGB(40, 42, 46);
-  `
-  
+  `  
     return(
         <nav>
             <Link to={'/'}>
