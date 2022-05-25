@@ -1,7 +1,7 @@
 import img1 from '../img/remera_boca.jpg'
 import img2 from '../img/remera_river.jpg'
 import img3 from '../img/remera_cai.jpeg'
- const prod = [
+export const prod = [
     {   id: 1,
         name: "Remera Boca Juniors Home Kit",
         descripcion: "Camiseta homenaje a la histórica temporada de 1981, donde una de las leyendas del futbol hace su debut en el club Atlético Boca Juniors. Diseñada para jugadores y para hinchas que destilan la pasión por el Xeneize.",

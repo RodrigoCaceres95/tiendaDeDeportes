@@ -4,7 +4,7 @@ import NavBar from './components/NavBar/navbar';
 import ItemDetailContainer from './components/itemDetailcontainer/itemDetailContainer';
 import ItemListContainer from './components/itemListContainer/itemListContainer';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-
+import { CartProvider } from './components/cartContext/cartContext';
 
 function App() {
   const Title = styled.h1`
@@ -13,6 +13,7 @@ function App() {
   color: palevioletred;
 `;
   return (
+    <CartProvider>
     <Router>
     <div className="App">
       <NavBar/>
@@ -23,6 +24,7 @@ function App() {
       </Routes>
     </div>
     </Router>
+    </CartProvider>
   );
 }
 export default App;

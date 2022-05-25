@@ -1,12 +1,17 @@
-import React from "react"
+import React, {useContext} from "react"
 import ItemCount from "../itemcount";
+import { CartContext } from "../cartContext/cartContext";
 import './itemDetailContainer.css'
 const ItemDetail = ({detail}) =>{
-    const onAdd = (number) => {
-        console.log(`Has añadido ${number} prendas de este producto a tu carrito`)
-        window.removeEventListener('onClick')
+
+    const onAdd = () => {
+        return (
+            <CartContext.Provider>
+                {({cartAdd}) =>(
+                    <></>
+                )}
+            </CartContext.Provider>);
     }
-    console.log(detail)
     // const { name, descripcion, tipo_camiseta, precio, escudo, marca, img, stock, articulo_color } = detail;
         return(
         <div className="contenedor">

@@ -1,9 +1,11 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {NavLink as Link} from 'react-router-dom';
 import styled from 'styled-components';
 import CartWidget from '../cartWidget';
 import './navbar.css'
+import { CartContext } from "../cartContext/cartContext";
 function NavBar(){
+    const [items, setItems] = useContext(CartContext)
     const Title = styled.h1`
     font-size: 1.5em;
     text-align: center;
@@ -34,7 +36,10 @@ function NavBar(){
             <Title>FAQ</Title>
             </Link>
             <Link to={'/category/Cart'}>
-            <CartWidget />
+
+            <CartWidget>
+            <p>{items.length}</p>
+            </CartWidget>
             </Link>
         </nav>
     )
