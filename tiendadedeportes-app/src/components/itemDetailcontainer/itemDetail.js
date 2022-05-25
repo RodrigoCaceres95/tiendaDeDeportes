@@ -3,16 +3,11 @@ import ItemCount from "../itemcount";
 import { CartContext } from "../cartContext/cartContext";
 import './itemDetailContainer.css'
 const ItemDetail = ({detail}) =>{
-
-    const onAdd = () => {
-        return (
-            <CartContext.Provider>
-                {({cartAdd}) =>(
-                    <></>
-                )}
-            </CartContext.Provider>);
-    }
+    const cartAdd = useContext(CartContext)
     // const { name, descripcion, tipo_camiseta, precio, escudo, marca, img, stock, articulo_color } = detail;
+    const onAdd = (number) => {
+            cartAdd(number, detail)
+    }
         return(
         <div className="contenedor">
             <img src={detail.img} alt={detail.name}/>

@@ -3,12 +3,12 @@ export const initialState = []
 export const CartContext = createContext()
 export const CartProvider = ({children}) =>{
     const [items, setItems] = useState(initialState)
-    const cartAdd = () => {
+    const cartAdd = (detail, number) => {
         const exist = items.find(x => x.id === detail.id)
         if (exist) {
-            setItems(items.map(x => x.id === detail.id ? {...exist, qty: exist.qty + 1} : x ))
+            setItems(items.map(x => x.id === detail.id ? {...exist, qty: exist.qty + number} : x ))
         } else {
-            setItems([...items, {...detail, qty: 1}])
+            setItems([...items, {...detail, qty: number}])
         }
         console.log(items)
     }
@@ -17,7 +17,4 @@ export const CartProvider = ({children}) =>{
         {children}
         </CartContext.Provider>
     )
-}
-const cartRemove = () => {
-
 }

@@ -5,7 +5,6 @@ import CartWidget from '../cartWidget';
 import './navbar.css'
 import { CartContext } from "../cartContext/cartContext";
 function NavBar(){
-    const [items, setItems] = useContext(CartContext)
     const Title = styled.h1`
     font-size: 1.5em;
     text-align: center;
@@ -36,10 +35,7 @@ function NavBar(){
             <Title>FAQ</Title>
             </Link>
             <Link to={'/category/Cart'}>
-
-            <CartWidget>
-            <p>{items.length}</p>
-            </CartWidget>
+            <CartWidget/>
             </Link>
         </nav>
     )
