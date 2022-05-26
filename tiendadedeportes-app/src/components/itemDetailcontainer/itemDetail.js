@@ -1,12 +1,14 @@
-import React, {useContext} from "react"
+import React, {useContext, useState} from "react"
 import ItemCount from "../itemcount";
 import { CartContext } from "../cartContext/cartContext";
 import './itemDetailContainer.css'
 const ItemDetail = ({detail}) =>{
-    const cartAdd = useContext(CartContext)
+    const addItem = useContext(CartContext)
+    const [cart, setCart] = useState(0)
     // const { name, descripcion, tipo_camiseta, precio, escudo, marca, img, stock, articulo_color } = detail;
     const onAdd = (number) => {
-            cartAdd(number, detail)
+            addItem(detail.id, detail.name, detail.precio, detail.img, number)
+            setCart(number)
     }
         return(
         <div className="contenedor">

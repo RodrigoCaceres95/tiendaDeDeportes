@@ -1,0 +1,21 @@
+.contenedor {
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+h2{
+    padding: 17.5px;
+    border-style:solid;
+    border-radius: 5px;
+    margin: 0 5px 0 5px;
+}
+.boton {
+    height: 100%;
+    padding: 0 20px;
+    border-radius: 5px;
+    margin: 0 5px 0 5px;
+    font-size: 18px;
+    color: white;
+    background-color: rgb(0, 0, 0);
+}
