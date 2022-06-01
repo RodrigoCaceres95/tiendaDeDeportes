@@ -10,7 +10,7 @@ export const prod = [
         material: "Poliéster reciclado",
         escudo: "Termotransferido",
         articulo_color: "Power Blue",
-        precio: "$17000",
+        precio: "17000",
         marca: "Adidas",
         img: img1,
         stock: 26
@@ -23,7 +23,7 @@ export const prod = [
         material:"51 % poliéster reciclado, 49 % poliéster",
         escudo:"Termotransferido",
         articulo_color:"White / Active Red",
-        precio: "$17000",
+        precio: "17000",
         marca: "Adidas",
         img: img2,
         stock: 6
@@ -36,7 +36,7 @@ export const prod = [
         material:"Poléster",
         escudo:"Termotransferido",
         articulo_color:"Rojo",
-        precio: "$17000",
+        precio: "17000",
         marca: "Puma",
         img: img3,
         stock: 11

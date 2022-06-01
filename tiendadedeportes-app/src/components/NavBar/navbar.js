@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import {NavLink as Link} from 'react-router-dom';
 import styled from 'styled-components';
-import CartWidget from '../cartWidget';
+import CartWidget from './cartWidget';
 import './navbar.css'
 import { CartContext } from "../cartContext/cartContext";
 function NavBar(){

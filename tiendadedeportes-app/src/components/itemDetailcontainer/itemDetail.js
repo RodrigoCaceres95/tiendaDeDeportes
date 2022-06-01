@@ -3,13 +3,21 @@ import ItemCount from "../itemcount";
 import { CartContext } from "../cartContext/cartContext";
 import './itemDetailContainer.css'
 const ItemDetail = ({detail}) =>{
-    const addItem = useContext(CartContext)
+    const [addItem] = useContext(CartContext)
     const [cart, setCart] = useState(0)
     // const { name, descripcion, tipo_camiseta, precio, escudo, marca, img, stock, articulo_color } = detail;
-    const onAdd = (number) => {
-            addItem(detail.id, detail.name, detail.precio, detail.img, number)
-            setCart(number)
-    }
+    const sendToAddItem = {
+        id: detail.id,
+        name: detail.name,
+        precio: detail.precio,
+        img: detail.img,
+        quantity: cart,
+      }
+      const onAdd = (number) => {
+        setCart(number);
+        sendToAddItem.quantity = Number(number)
+        addItem(sendToAddItem)
+      };
         return(
         <div className="contenedor">
             <img src={detail.img} alt={detail.name}/>
