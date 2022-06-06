@@ -54,7 +54,7 @@ const Cart = props => {
             </div>
           </div>
           <Link to={'/clear'}>
-          <button onClick={()=> clear()}>
+          <button className='cartboton clear' onClick={()=> clear()}>
             Vaciar carrito
           </button>
         </Link>

@@ -15,7 +15,7 @@ const CartItem = ({data}) => {
       <td scope='col'>${data.precio * data.quantity}</td>
       <td scope='col'>
         <Link to="/del">
-          <button onClick={() =>removeItem(data.id)}>
+          <button className='cartboton' onClick={() =>removeItem(data.id)}>
             Eliminar
           </button>
         </Link>
