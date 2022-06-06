@@ -1,8 +1,6 @@
 import React from "react";
 import {useEffect, useState, useContext} from "react"
 import ItemList from "./itemList";
-import { getProducts } from "../productos";
-// import {db} from '../firebaseConfig/firebaseConfig'
 import { collection, query, getDocs } from "firebase/firestore";
 import { db } from "../firebaseConfig/firebaseConfig";
 import { useParams } from "react-router-dom";
@@ -17,7 +15,7 @@ function ItemListContainer() {
   
     useEffect(() => {
       const itemCollection = async () => {
-        const q = query(collection(db, "camisetas"));
+        const q = query(collection(db, "products"));
         const docs = [];
         const querySnapshot = await getDocs(q);
         querySnapshot.forEach((doc) => {

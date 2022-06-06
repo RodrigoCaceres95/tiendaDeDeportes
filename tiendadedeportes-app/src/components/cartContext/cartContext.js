@@ -15,13 +15,13 @@ export const CartProvider = ({children}) =>{
       }
   
       items.forEach((item,index)=>{
-        if(item.id == data.id){
+        if(item.id === data.id){
           itemFound = index
         }
       })
       
   
-      if(itemFound == undefined){
+      if(itemFound === undefined){
         items.push(newProduct)
         setItems(items)
         console.log('El producto fue agregado exitosamente')
@@ -39,7 +39,7 @@ export const CartProvider = ({children}) =>{
       let itemFound = false
       
       items.forEach((item, index) => {
-        if(item.id == itemId){
+        if(item.id === itemId){
           itemFound = index
         }
       });
@@ -62,7 +62,7 @@ export const CartProvider = ({children}) =>{
     ]
   
     const isInCart = (id) =>{
-      const itemFound = items.find(item => item.id == id);
+      const itemFound = items.find(item => item.id === id);
   
       if(itemFound){
         return true

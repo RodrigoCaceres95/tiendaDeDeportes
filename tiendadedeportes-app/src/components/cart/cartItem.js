@@ -20,6 +20,7 @@ const CartItem = ({data}) => {
           </button>
         </Link>
       </td>
+
     </tr>
   )
 }

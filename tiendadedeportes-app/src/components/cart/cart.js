@@ -53,6 +53,11 @@ const Cart = props => {
               Total a pagar ${total}
             </div>
           </div>
+          <Link to={'/clear'}>
+          <button onClick={()=> clear()}>
+            Vaciar carrito
+          </button>
+        </Link>
         </div>
       :
         <div className='container'>
