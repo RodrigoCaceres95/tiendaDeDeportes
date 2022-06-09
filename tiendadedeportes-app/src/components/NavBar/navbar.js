@@ -28,9 +28,7 @@ function NavBar(){
             <Link to={'/category/Nosotros'}>
             <Title>Nosotros</Title>
             </Link>
-            <Link to={'/category/Ofertas'}>
             <Title>Ofertas</Title>
-            </Link>
             <Link to={'category/FaQ'}>
             <Title>FAQ</Title>
             </Link>

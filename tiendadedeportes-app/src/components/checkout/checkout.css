@@ -1,0 +1,16 @@
+div .container {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    justify-content: space-between;
+    margin: 50px auto;
+}
+.formulario input {
+    margin: 20px;
+    width: 760px;
+    height: 30px;
+    border-radius: 5px;
+}
+.boton {
+    padding: 10px 20px;
+}

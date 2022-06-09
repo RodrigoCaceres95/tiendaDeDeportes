@@ -58,6 +58,8 @@ const Cart = props => {
             Vaciar carrito
           </button>
         </Link>
+        <Link to='/checkout'><button className='cartboton'>Terminar mi compra</button>
+        </Link>
         </div>
       :
         <div className='container'>
