@@ -1,5 +1,4 @@
-import './App.css';
-import styled from 'styled-components';
+// import './App.css';
 import NavBar from './components/NavBar/navbar';
 import ItemDetailContainer from './components/itemDetailcontainer/itemDetailContainer';
 import ItemListContainer from './components/itemListContainer/itemListContainer';
@@ -9,11 +8,6 @@ import Cart from './components/cart/cart';
 import Checkout from './components/checkout/checkout';
 
 function App() {
-  const Title = styled.h1`
-  font-size: 1.5em;
-  text-align: center;
-  color: palevioletred;
-`;
   return (
     <CartProvider>
     <Router>
@@ -22,7 +16,7 @@ function App() {
       {/* <ItemDetailContainer/>  */}
       <Routes>
         <Route path='/checkout' element={<Checkout/>}/>
-        <Route path='/detail/:id' element={<ItemDetailContainer/>}/>
+        <Route path='/:category/:id' element={<ItemDetailContainer/>}/>
         <Route path='/' element={<ItemListContainer/>}/>
         <Route path='/category/Cart' element={<Cart/>}/>
       </Routes>

@@ -1,5 +1,5 @@
 import React, {useContext, useState} from "react"
-import ItemCount from "../itemcount";
+import ItemCount from "../itemcount/itemcount";
 import { CartContext } from "../cartContext/cartContext";
 import './itemDetailContainer.css'
 const ItemDetail = ({detail}) =>{
@@ -19,22 +19,23 @@ const ItemDetail = ({detail}) =>{
         addItem(sendToAddItem)
       };
         return(
-        <div className="contenedor">
+        <div className="detailcontainer">
+            <section className="detailimagen">
             <img src={detail.img} alt={detail.name}/>
-            <div className="detalles">
+            </section>
+            <section className="detalles">
                 <h3>{detail.name}</h3>
                 <ul className="lista_detalles">
                     <li>Marca: {detail.marca}</li>
-                    <li>Precio: {detail.precio}</li>
-                    <li>Tipo de Camiseta: {detail.tipo_camiseta}</li>
-                    <li>Tipo de Escudo: {detail.escudo}</li>
+                    <li>Precio: ${detail.precio}</li>
+                    <li>Material: {detail.material}</li>
                     <li>Color: {detail.articulo_color} </li>
                     <li>Descripción: {detail.descripcion}</li>
                 </ul>
                 <ItemCount
                 onAdd={onAdd} 
                 stock={detail.stock} />
-            </div>
+            </section>
         </div>
        )
     }

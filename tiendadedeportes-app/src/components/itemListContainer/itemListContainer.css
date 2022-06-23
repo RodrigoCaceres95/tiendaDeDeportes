@@ -4,6 +4,7 @@
     flex-wrap: wrap;
 }
 .contenedor {
+    background-color: white;
     position: relative;
     margin-top: 30px;
     margin-bottom: 30px;
@@ -11,15 +12,20 @@
     margin-right: 20px;
     border-radius: 10px;
     max-width: 350px;
+    height: 400px;
     padding: 10px;
+    box-shadow: 0 1px 1px rgb(0, 0, 0.5);
 }
-.contenedor .info {
-    position: relative;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+.card{
+    width: 300px;
+}
+.imagen {
+    max-width: 300px;
+    max-height: 300px;
+}
+.imagen img{
+    max-width: 300px;
+    max-height: 300px;
 }
 h3 {
     padding: 10px;
@@ -30,4 +36,7 @@ h3 {
 .links {
     text-decoration: none;
     color: black;
+}
+.info_name, .info_precio {
+    text-align: center;
 }

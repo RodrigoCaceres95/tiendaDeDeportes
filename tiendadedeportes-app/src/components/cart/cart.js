@@ -10,15 +10,16 @@ const Cart = props => {
   const [show,setShow] = useState(false)
   const [total,settotal] = useState(0)
   useEffect(() => {
-    if(items.length>0){
-      setShow(true)
-    }
-    let partial = 0
-    items.forEach(item => {
-      partial = partial + (item.precio*item.quantity)
-    });
-    settotal(partial)
-    
+    setTimeout(() => {      
+      if(items.length>0){
+        setShow(true)
+      }
+      let partial = 0
+      items.forEach(item => {
+        partial = partial + (item.precio*item.quantity)
+      });
+      settotal(partial)
+    }, 1000);
     
   }, []);
 

@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import './itemcount.css'
 import {Link} from 'react-router-dom'
-
  function ItemCount({stock, onAdd}){
     const initial = 1
     const [number, setCount] = useState(initial)
     return(
-        <div className='contenedor'>
+        <div className='botonesgral'>
             <h2>{number}</h2>
                 <button className='boton' onClick={()=> {if(number > initial){setCount(number-1)}}}>(-)</button>
                 <Link to={'/category/Cart'}>

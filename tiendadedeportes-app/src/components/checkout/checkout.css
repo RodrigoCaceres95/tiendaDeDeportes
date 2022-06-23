@@ -4,6 +4,7 @@ div .container {
     width: fit-content;
     justify-content: space-between;
     margin: 50px auto;
+    box-shadow: 0 0 2px rgb(0, 0, .5);
 }
 .formulario input {
     margin: 20px;

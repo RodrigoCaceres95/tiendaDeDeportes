@@ -9,7 +9,7 @@ function ItemList({ items }) {
             {items.map((iterar) => {
                 return( 
                     <div key={items.id}>
-                    <Link className="links" to={`/detail/${iterar.id}`}>
+                    <Link className="links" to={`/${iterar.category}/${iterar.id}`}>
                         <Item key={iterar.id} 
                         name={iterar.name} 
                         img={iterar.img} 
