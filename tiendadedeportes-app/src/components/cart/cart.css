@@ -37,3 +37,6 @@ td {
 .clear {
     margin-top: 10px;
 }
+.cartboton:hover {
+    cursor: pointer;
+}

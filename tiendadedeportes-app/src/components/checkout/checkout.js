@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useContext} from "react";
 
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../firebaseConfig/firebaseConfig";
@@ -7,6 +7,7 @@ import { MessageSuccess } from "../messageSuccess/messageSuccess";
 import { Link } from "react-router-dom";
 import { CartContext } from "../cartContext/cartContext";
 import { getModularInstance } from "@firebase/util";
+
 
 const initialState = {
     client: [{
@@ -26,6 +27,7 @@ const initialState = {
 const Checkout = ({items, total}) => {
     const [values, setValues] = useState(initialState)
     const [purchaseId, setPurchaseId] = useState('')
+    // const [addItem, removeItem, clear, isInCart, items] = useContext(CartContext)
     const today = new Date()
     
     const handleOnChange = (e) =>{
@@ -54,6 +56,7 @@ const Checkout = ({items, total}) => {
                 <h1>Orden enviada</h1>
                 <h3>Su numero de orden es: {purchaseId}</h3>
                 <p>Le enviaremos un mail con su link de pago. Muchas gracias por su compra!</p>
+                <h3>Necesita más items? Puede seguir comprando <Link to={'/'}>aquí</Link></h3>
                 </>
             ):(
 

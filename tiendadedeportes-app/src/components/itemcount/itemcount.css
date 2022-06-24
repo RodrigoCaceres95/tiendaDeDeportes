@@ -4,11 +4,14 @@
     flex-direction: row;
     justify-content: center;
 }
-h2{
+.number{
     padding: 17.5px;
     border-style:solid;
     border-radius: 5px;
     margin: 0 5px 0 5px;
+}
+.boton:hover{
+    cursor: pointer;
 }
 .boton {
     height: 100%;

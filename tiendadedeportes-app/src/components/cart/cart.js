@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import { CartContext } from '../cartContext/cartContext'
 import CartItem from './cartItem'
 import './cart.css'
-
 const Cart = props => {
 
   const [addItem, removeItem, clear, isInCart, items] = useContext(CartContext)
@@ -37,7 +36,7 @@ const Cart = props => {
                 <tr >
                   <th scope='col' >Articulo</th>
                   <th scope='col' >Cantidad</th>
-                  <th scope='col' >Precio por unidad</th>
+                  <th scope='col' >Precio unitario</th>
                   <th scope='col' >Precio Total</th>
                   <th scope='col' >Eliminar del carito</th>
                 </tr>
@@ -54,7 +53,7 @@ const Cart = props => {
               Total a pagar ${total}
             </div>
           </div>
-          <Link to={'/clear'}>
+          <Link to={'/'}>
           <button className='cartboton clear' onClick={()=> clear()}>
             Vaciar carrito
           </button>

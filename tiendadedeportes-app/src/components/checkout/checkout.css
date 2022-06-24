@@ -3,6 +3,7 @@ div .container {
     flex-direction: column;
     width: fit-content;
     justify-content: space-between;
+    align-items: center;
     margin: 50px auto;
     box-shadow: 0 0 2px rgb(0, 0, .5);
 }

@@ -1,4 +1,5 @@
 import {createContext, useState} from "react"
+import Swal from "sweetalert2"
 export const CartContext = createContext()
 export const CartProvider = ({children}) =>{
     const [items, setItems] = useState([])
@@ -42,19 +43,18 @@ export const CartProvider = ({children}) =>{
         if(item.id === itemId){
           itemFound = index
         }
+        if(itemFound !== false){
+          items.splice(itemFound, 1)
+          setItems(items)
+          Swal.fire({
+            icon: 'warning',
+            title: 'Atención',
+            text: 'El item que seleccionaste fue borrado'
+          }) 
+        }else{
+          console.log("Producto no encontrado")
+        }
       });
-  
-      
-      if(itemFound !== false){
-        items.splice(itemFound, 1)
-        setItems(items)
-      }else{
-        console.log("Producto no encontrado")
-      }
-  
-  
-  
-  
     }
     const getQuantity = () =>{
       let q = 0;
@@ -63,7 +63,10 @@ export const CartProvider = ({children}) =>{
       return q
     }
     const clear = () =>[
-      setItems([]) 
+      setItems([]), 
+      Swal.fire({icon:'warning',
+      title:'Atención',
+      text:'Todos los items fueron borrados'})
     ]
   
     const isInCart = (id) =>{
