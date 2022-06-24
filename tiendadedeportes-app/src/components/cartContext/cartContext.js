@@ -56,12 +56,6 @@ export const CartProvider = ({children}) =>{
         }
       });
     }
-    const getQuantity = () =>{
-      let q = 0;
-      items.forEach((e)=>(q += e.quantity))
-      console.log(q)
-      return q
-    }
     const clear = () =>[
       setItems([]), 
       Swal.fire({icon:'warning',
@@ -78,9 +72,9 @@ export const CartProvider = ({children}) =>{
         return false
       }
     } 
-  
+    const datos = {addItem, removeItem, clear, isInCart, items}
     return(
-      <CartContext.Provider value={[addItem, removeItem, clear, isInCart, items, getQuantity]}>
+      <CartContext.Provider value={datos}>
         {children}
       </CartContext.Provider>
     )

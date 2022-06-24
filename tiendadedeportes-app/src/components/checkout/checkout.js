@@ -1,12 +1,9 @@
-import React, {useState, useContext} from "react";
+import React, {useState} from "react";
 
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../firebaseConfig/firebaseConfig";
 import './checkout.css'
-import { MessageSuccess } from "../messageSuccess/messageSuccess";
 import { Link } from "react-router-dom";
-import { CartContext } from "../cartContext/cartContext";
-import { getModularInstance } from "@firebase/util";
 
 
 const initialState = {

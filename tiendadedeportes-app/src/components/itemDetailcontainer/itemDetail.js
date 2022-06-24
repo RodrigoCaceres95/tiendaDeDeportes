@@ -3,7 +3,7 @@ import ItemCount from "../itemcount/itemcount";
 import { CartContext } from "../cartContext/cartContext";
 import './itemDetailContainer.css'
 const ItemDetail = ({detail}) =>{
-    const [addItem] = useContext(CartContext)
+    const {addItem} = useContext(CartContext)
     const [cart, setCart] = useState(0)
     // const { name, descripcion, tipo_camiseta, precio, escudo, marca, img, stock, articulo_color } = detail;
     const sendToAddItem = {

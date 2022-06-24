@@ -5,7 +5,7 @@ import CartItem from './cartItem'
 import './cart.css'
 const Cart = props => {
 
-  const [addItem, removeItem, clear, isInCart, items] = useContext(CartContext)
+  const {clear, items} = useContext(CartContext)
   const [show,setShow] = useState(false)
   const [total,settotal] = useState(0)
   useEffect(() => {
@@ -20,7 +20,7 @@ const Cart = props => {
       settotal(partial)
     }, 1000);
     
-  }, []);
+  }, [items]);
 
   
 

@@ -5,21 +5,21 @@ import './cart.css'
 
 
 const CartItem = ({data}) => {
-  const [addItem, removeItem, clear, isInCart, items] = useContext(CartContext)
+  const {removeItem} = useContext(CartContext)
   return (
 
     <tr className='tabla'>
-      <td scope='col'>{data.name}</td>
-      <td scope='col'>{data.quantity}</td>
-      <td scope='col'>${data.precio}</td>
-      <td scope='col'>${data.precio * data.quantity}</td>
-      <td scope='col'>
+      <th scope='col'>{data.name}</th>
+      <th scope='col'>{data.quantity}</th>
+      <th scope='col'>${data.precio}</th>
+      <th scope='col'>${data.precio * data.quantity}</th>
+      <th scope='col'>
         <Link to="/">
           <button className='cartboton' onClick={() =>removeItem(data.id)}>
             Eliminar
           </button>
         </Link>
-      </td>
+      </th>
 
     </tr>
   )
