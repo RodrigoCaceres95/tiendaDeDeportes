@@ -5,6 +5,7 @@ import './cartwidget.css'
 function CartWidget() {
     const {items} = useContext(CartContext)
     const quantity = (items.map(data => data.quantity).reduce((prev, curr) => prev + curr, 0))
+    
     return(
       <div className="cartwidget">
             <Link to={'/category/Cart'}>

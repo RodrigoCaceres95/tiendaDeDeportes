@@ -7,6 +7,15 @@ body {
     flex-direction: column;
     width: 100%;
 }
+.detailimagen img {
+    width: 100%;
+    height: auto;
+    flex-grow: 1;
+}
+.detalles{
+    align-items: center;
+    font-size: 18px;
+}
 .detailcontainer {
     background-color: white;
     position: relative;
@@ -14,8 +23,19 @@ body {
     width: 85%;
     height: auto;
     overflow: hidden;
+    padding-bottom: 20px;
     border-radius: 10px;
     box-shadow: 0  1px 1px rgb(0, 0, 15);
+}
+@media(min-width:1200px){
+    .body{
+        flex-direction: row;
+    }
+
+}
+.volverAInicio{
+    align-items: center;
+    text-align: center;
 }
 h3 {
     background-color: white;
@@ -23,23 +43,24 @@ h3 {
     font-size: 30px;
     text-align: justify;
 }
-@media (min-width: 768px) {
+@media (min-width: 1340px) {
     .detailimagen img {
         width: 700px;
     }
+    .detalles {
+        position: absolute;
+        background-color: white;
+        max-width: 40%;
+        top: 20%;
+        left: 60%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 18px;
+    }
 }
-.detalles {
-    position: absolute;
-    background-color: white;
-    max-width: 40%;
-    top: 20%;
-    left: 60%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 18px;
-}
+
 .detalles .lista_detalles {
     text-align: left;
     list-style: circle;

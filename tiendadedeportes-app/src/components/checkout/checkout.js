@@ -1,89 +1,70 @@
-import React, {useState} from "react";
-
-import { collection, addDoc } from "firebase/firestore";
-import { db } from "../firebaseConfig/firebaseConfig";
+import React, {useContext, useState} from "react";
 import './checkout.css'
-import { Link } from "react-router-dom";
-
-
-const initialState = {
-    client: [{
-        name: '',
-        lastname: '',
-        email: ''},
-    ],
-    items: [{
-        id: "",
-        name: "",
-        precio:"",
-    }],
-    date: "",
-    total: "",
-    
-}
-const Checkout = ({items, total}) => {
-    const [values, setValues] = useState(initialState)
-    const [purchaseId, setPurchaseId] = useState('')
+import { db } from "../firebaseConfig/firebaseConfig";
+import { useNavigate } from "react-router-dom";
+import { CartContext } from "../cartContext/cartContext";
+import { addDoc, collection } from "firebase/firestore";
+import MessageSuccess from "../messageSuccess/messageSuccess";
+const Checkout = () => {
+    const {clear, items} = useContext(CartContext)
+    const navigate =useNavigate()
+    const [purchaseID, setPurchaseID] = useState("")
+    const [newOrder, setNewOrder] = useState(false)
     // const [addItem, removeItem, clear, isInCart, items] = useContext(CartContext)
-    const today = new Date()
-    
-    const handleOnChange = (e) =>{
-        const{value, name} = e.target
-        setValues({
-            client: {...values.client[0], [name]: value},
-            items: items,
-            total: Number(total),
-            date: today
+    const [client, setClient] = useState({
+        nombre:"",
+        apellido:"",
+        email:""
+      })   
+    const handleOnChange = (event) =>{
+        setClient({
+            ...client,
+            [event.target.name] : event.target.value
         })
     }
-    const onSubmit = async(e) => {
-        e.preventDefault()
-        const docRef = await addDoc(collection(db, 'items'),{
-            values,
-        })
-        console.log('document written with ID', docRef.id)
-        setPurchaseId(docRef.id)
-        setValues(initialState)
-    }
+    const dataSent = (event) => {
+        event.preventDefault()
+        setNewOrder(true)
+        const order = {
+            client: client,
+            items: items
+        }
+        const orderProcess = collection(db,'items')
+        addDoc(orderProcess, order)
+            .then(resp => setPurchaseID(resp.id))
+            .catch(err => console.log(err))
+            .finally(()=>{
+                setNewOrder(false)
+                setClient({nombre:"", apellido: "", email:""})
+            })
+            setTimeout(() => {
+                navigate('/')
+                clear()
+            }, 5000);
+    } 
     return(
-        <div className="container">
+        <>
+        <div className="containercheckout">
             <h1>Checkout</h1>
-            {purchaseId ? (
+            <div>
+                {newOrder ? 
                 <>
-                <h1>Orden enviada</h1>
-                <h3>Su numero de orden es: {purchaseId}</h3>
-                <p>Le enviaremos un mail con su link de pago. Muchas gracias por su compra!</p>
-                <h3>Necesita más items? Puede seguir comprando <Link to={'/'}>aquí</Link></h3>
-                </>
-            ):(
-
-                <form className="formulario" onSubmit={onSubmit}>
-                <input 
-                name='nombre' 
-                value={values.nombre}
-                type='text' placeholder='Nombres'
-                onChange={handleOnChange} >
-                </input>
-                <br></br>
-                <input 
-                name='apellidos' 
-                value={values.apellidos} 
-                type='text' placeholder='Apellidos'
-                onChange={handleOnChange} >
-                </input>
-                <br></br>
-                <input 
-                name='email' 
-                value={values.email} 
-                type='email' placeholder='E-Mail'
-                onChange={handleOnChange}>
-                </input>
-                <br></br>
-                <button className="boton" type="submit">{""}Enviar{""}</button>
-            </form>
+                (
+                    {purchaseID && <MessageSuccess purchaseId={purchaseID}/>}
                     ) 
-                }
+                </>
+                :(
+                    <>
+                    <form className="formulario" onSubmit={dataSent} onChange={handleOnChange}>
+                        <input type="name" placeholder="Nombre..."></input>
+                        <input type="name" placeholder="Apellidos..."></input>
+                        <input type="email" placeholder="e-mail..."></input>
+                    <button className="boton" type="submit">Terminar Compra</button>
+                    </form>
+                    </>
+                    )}
+            </div>
         </div>
-    )
+        </>) 
 }
 export default Checkout

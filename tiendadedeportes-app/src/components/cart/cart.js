@@ -1,6 +1,7 @@
 import React, {useContext, useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import { CartContext } from '../cartContext/cartContext'
+import Swal from "sweetalert2"
 import CartItem from './cartItem'
 import './cart.css'
 const Cart = props => {
@@ -28,7 +29,7 @@ const Cart = props => {
     <>
       {
       show?
-        <div className='container'>
+        <div className='containerCart'>
           <h1 >Carrito de compras</h1>
           <div >
             <table>
@@ -54,7 +55,7 @@ const Cart = props => {
             </div>
           </div>
           <Link to={'/'}>
-          <button className='cartboton clear' onClick={()=> clear()}>
+          <button className='cartboton clear' onClick={()=> clear(  Swal.fire({icon:'warning',title:'Atención',text:'Todos los items fueron borrados'}))}>
             Vaciar carrito
           </button>
         </Link>
@@ -62,7 +63,7 @@ const Cart = props => {
         </Link>
         </div>
       :
-        <div className='container'>
+        <div className='containerCart'>
           <h1>Oops! Parece que no has agregado ningún item</h1>
           <div>
 

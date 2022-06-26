@@ -1,4 +1,5 @@
-div .container {
+div .containercheckout {
+    background-color: white;
     display: flex;
     flex-direction: column;
     width: fit-content;
@@ -15,4 +16,8 @@ div .container {
 }
 .boton {
     padding: 10px 20px;
+    margin-bottom: 10px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
 }

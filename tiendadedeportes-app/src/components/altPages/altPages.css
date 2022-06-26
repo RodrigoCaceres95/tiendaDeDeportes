@@ -1,0 +1,32 @@
+.contenedorAltPages{
+    background-color: white;
+    position: relative;
+    margin: 20px auto;
+    padding-top: 0;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    width: 75%;
+    height: auto;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.container_robot{
+    justify-content: space-between;
+    position: relative;
+    text-align: center;
+    align-items: center;
+}
+.contenedorAltPages h1 {
+    padding-top: 5px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+p .parrafo {
+    font-size: 16px;
+    text-align: justify;
+}
+.robot {
+    height: auto;
+    max-width: 50%;
+}

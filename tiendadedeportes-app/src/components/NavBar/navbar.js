@@ -15,15 +15,12 @@ function NavBar(){
         <nav>
             <Link to={'/'}>
             <Title>Mi Deporte</Title>
-            </Link>
+            </Link>        
             <Link to={'/Nosotros'}>
             <Title>Nosotros</Title>
             </Link>
-            <Link to={'/Categorias'}>
-            <Title>Categorías</Title>
-            </Link>
-            <Link to={'/FaQ'}>
-            <Title>FAQ</Title>
+            <Link to={'/FAQ'}>
+            <Title>FaQ</Title>
             </Link>
             <Link to={'/category/Cart'}>
             <CartWidget/>
